@@ -21,11 +21,11 @@ public struct Shadow
 
     // MARK: Statics
     
-    static let None = Shadow()
+    public static let None = Shadow()
     
-    static let Light = Shadow(color: UIColor.blackColor(), offset: UIOffsetZero, opacity: 0.3, radius: 1)
+    public static let Light = Shadow(color: UIColor.blackColor(), offset: UIOffsetZero, opacity: 0.3, radius: 1)
     
-    static let Dark = Shadow(color: UIColor.blackColor(), offset: UIOffset(horizontal: 2, vertical: 2), opacity: 0.8, radius: 3)
+    public static let Dark = Shadow(color: UIColor.blackColor(), offset: UIOffset(horizontal: 2, vertical: 2), opacity: 0.8, radius: 3)
 }
 
 //MARK: - Equatable
