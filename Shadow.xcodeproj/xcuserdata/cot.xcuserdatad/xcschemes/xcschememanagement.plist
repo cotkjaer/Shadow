@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ShadowDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>8FFB234C1C7084890037A7C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FFB23611C7084D00037A7C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
