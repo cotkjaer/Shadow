@@ -7,18 +7,30 @@
 //
 
 import UIKit
-
-//TODO: Animatable shadow
+import Animation
+import Interpolation
 
 //MARK: - Shadow
 
 public struct Shadow
 {
-    var color : UIColor = UIColor.clearColor()
-    var offset : UIOffset = UIOffsetZero
-    var opacity : CGFloat = 0
-    var radius : CGFloat = 0
-
+    var color : UIColor
+    var offset : UIOffset
+    var opacity : CGFloat
+    var radius : CGFloat
+    
+    public init(
+        color : UIColor = UIColor.clearColor(),
+        offset : UIOffset = UIOffsetZero,
+        opacity : CGFloat = 0,
+        radius : CGFloat = 0
+        )
+    {
+        self.color = color
+        self.offset = offset
+        self.opacity = opacity
+        self.radius = radius
+    }
     // MARK: Statics
     
     public static let None = Shadow()
@@ -44,6 +56,19 @@ extension Shadow : CustomDebugStringConvertible
     public var debugDescription : String { return "Shadow(offset: \(offset), opacity: \(opacity), radius: \(radius), color: \(color))" }
 }
 
+// MARK: - LERP
+
+func ◊ (ab: (Shadow, Shadow), t: CGFloat) -> Shadow
+{
+    let a = ab.0
+    let b = ab.1
+    
+    return Shadow(
+        color: (a.color, b.color) ◊ t,
+        offset: (a.offset, b.offset) ◊ t,
+        opacity: (a.opacity, b.opacity) ◊ t,
+        radius: (a.radius, b.radius) ◊ t)
+}
 
 public extension UIView
 {
@@ -82,7 +107,7 @@ public extension UIView
         get { return layer.shadowRadius }
     }
     
-    var shadow : Shadow
+    public var shadow : Shadow
         {
         set
         {
@@ -100,6 +125,20 @@ public extension UIView
                 opacity: shadowOpacity,
                 radius: shadowRadius)
         }
+    }
+    
+    func setShadow(shadow: Shadow,
+        duration: Double,
+        timing: Animation.TimingFunction = .QuadraticEaseInOut,
+        completion: (Bool -> ())? = nil)
+    {
+        let shadowBefore = self.shadow
+        
+        Animator.animate(duration,
+            delay: 0,
+            timingFunction: timing,
+            closure: { self.shadow = (shadowBefore, shadow) ◊ CGFloat($0) },
+            completion: completion)
     }
 }
 

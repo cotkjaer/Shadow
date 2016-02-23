@@ -20,8 +20,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8a1-9H-gig">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POB-Fl-Ep3">
-                                        <rect key="frame" x="97" y="49" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POB-Fl-Ep3">
+                                        <rect key="frame" x="93" y="49" width="55" height="30"/>
                                         <state key="normal" title="Shadow"/>
                                         <connections>
                                             <action selector="cycleShadows" destination="BYZ-38-t0r" eventType="touchUpInside" id="7MH-iy-MwG"/>

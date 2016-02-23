@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F2426FA1C77797600519AD5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8F2426F91C77797600519AD5 /* Cartfile */; };
+		8FCE6A7D1C7B1AF50079A587 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7B1C7B1AF50079A587 /* Animation.framework */; };
+		8FCE6A7E1C7B1AF50079A587 /* Interpolation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */; };
+		8FCE6A7F1C7B24550079A587 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7B1C7B1AF50079A587 /* Animation.framework */; };
+		8FCE6A801C7B24550079A587 /* Interpolation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */; };
 		8FFB23471C7084890037A7C5 /* Shadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FFB23461C7084890037A7C5 /* Shadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FFB234E1C7084890037A7C5 /* Shadow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB23431C7084890037A7C5 /* Shadow.framework */; };
 		8FFB23531C7084890037A7C5 /* ShadowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB23521C7084890037A7C5 /* ShadowTests.swift */; };
@@ -52,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F2426F91C77797600519AD5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		8FCE6A7B1C7B1AF50079A587 /* Animation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Animation.framework; path = Carthage/Build/iOS/Animation.framework; sourceTree = "<group>"; };
+		8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Interpolation.framework; path = Carthage/Build/iOS/Interpolation.framework; sourceTree = "<group>"; };
 		8FFB23431C7084890037A7C5 /* Shadow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shadow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFB23461C7084890037A7C5 /* Shadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shadow.h; sourceTree = "<group>"; };
 		8FFB23481C7084890037A7C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCE6A7D1C7B1AF50079A587 /* Animation.framework in Frameworks */,
+				8FCE6A7E1C7B1AF50079A587 /* Interpolation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCE6A7F1C7B24550079A587 /* Animation.framework in Frameworks */,
+				8FCE6A801C7B24550079A587 /* Interpolation.framework in Frameworks */,
 				8FFB23761C708B590037A7C5 /* Shadow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +110,9 @@
 		8FFB23391C7084890037A7C5 = {
 			isa = PBXGroup;
 			children = (
+				8FCE6A7B1C7B1AF50079A587 /* Animation.framework */,
+				8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */,
+				8F2426F91C77797600519AD5 /* Cartfile */,
 				8FFB23451C7084890037A7C5 /* Shadow */,
 				8FFB23511C7084890037A7C5 /* ShadowTests */,
 				8FFB23631C7084D00037A7C5 /* ShadowDemo */,
@@ -213,6 +228,7 @@
 				8FFB235F1C7084D00037A7C5 /* Frameworks */,
 				8FFB23601C7084D00037A7C5 /* Resources */,
 				8FFB237A1C708B590037A7C5 /* Embed Frameworks */,
+				8FCE6A6B1C78F82B0079A587 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -270,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F2426FA1C77797600519AD5 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +308,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FCE6A6B1C78F82B0079A587 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Animation.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Interpolation.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8FFB233E1C7084890037A7C5 /* Sources */ = {
@@ -450,6 +485,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Shadow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -468,6 +507,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Shadow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -502,6 +545,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ShadowDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.ShadowDemo";
@@ -514,6 +561,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ShadowDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.ShadowDemo";
@@ -540,6 +591,7 @@
 				8FFB23591C7084890037A7C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FFB235A1C7084890037A7C5 /* Build configuration list for PBXNativeTarget "ShadowTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +600,7 @@
 				8FFB235C1C7084890037A7C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FFB23711C7084D00037A7C5 /* Build configuration list for PBXNativeTarget "ShadowDemo" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +609,7 @@
 				8FFB23731C7084D00037A7C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

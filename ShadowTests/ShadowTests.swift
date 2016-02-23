@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Shadow
+//@testable import Shadow
 
 class ShadowTests: XCTestCase {
     
