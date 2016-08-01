@@ -9,6 +9,7 @@
 import UIKit
 import Animation
 import Interpolation
+import Easing
 
 //MARK: - Shadow
 
@@ -129,7 +130,7 @@ public extension UIView
     
     func setShadow(shadow: Shadow,
         duration: Double,
-        timing: Animation.TimingFunction = .QuadraticEaseInOut,
+        timing: TimingFunction = TimingFunction(easeIn: EasingCurve.Quadratic, easeOut: EasingCurve.Quadratic),
         completion: (Bool -> ())? = nil)
     {
         let shadowBefore = self.shadow

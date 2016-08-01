@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8F2426FA1C77797600519AD5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8F2426F91C77797600519AD5 /* Cartfile */; };
+		8F55D7D31D4F93FD00E58FBB /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F55D7D21D4F93FD00E58FBB /* Easing.framework */; };
+		8F55D7D41D4F941D00E58FBB /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F55D7D21D4F93FD00E58FBB /* Easing.framework */; };
+		8F55D7D51D4F941D00E58FBB /* Easing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F55D7D21D4F93FD00E58FBB /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FCE6A7D1C7B1AF50079A587 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7B1C7B1AF50079A587 /* Animation.framework */; };
 		8FCE6A7E1C7B1AF50079A587 /* Interpolation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */; };
 		8FCE6A7F1C7B24550079A587 /* Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCE6A7B1C7B1AF50079A587 /* Animation.framework */; };
@@ -50,6 +53,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8FFB23771C708B590037A7C5 /* Shadow.framework in Embed Frameworks */,
+				8F55D7D51D4F941D00E58FBB /* Easing.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		8F2426F91C77797600519AD5 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		8F55D7D21D4F93FD00E58FBB /* Easing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Easing.framework; path = Carthage/Build/iOS/Easing.framework; sourceTree = "<group>"; };
 		8FCE6A7B1C7B1AF50079A587 /* Animation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Animation.framework; path = Carthage/Build/iOS/Animation.framework; sourceTree = "<group>"; };
 		8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Interpolation.framework; path = Carthage/Build/iOS/Interpolation.framework; sourceTree = "<group>"; };
 		8FFB23431C7084890037A7C5 /* Shadow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shadow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F55D7D31D4F93FD00E58FBB /* Easing.framework in Frameworks */,
 				8FCE6A7D1C7B1AF50079A587 /* Animation.framework in Frameworks */,
 				8FCE6A7E1C7B1AF50079A587 /* Interpolation.framework in Frameworks */,
 			);
@@ -101,6 +107,7 @@
 				8FCE6A7F1C7B24550079A587 /* Animation.framework in Frameworks */,
 				8FCE6A801C7B24550079A587 /* Interpolation.framework in Frameworks */,
 				8FFB23761C708B590037A7C5 /* Shadow.framework in Frameworks */,
+				8F55D7D41D4F941D00E58FBB /* Easing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +117,7 @@
 		8FFB23391C7084890037A7C5 = {
 			isa = PBXGroup;
 			children = (
+				8F55D7D21D4F93FD00E58FBB /* Easing.framework */,
 				8FCE6A7B1C7B1AF50079A587 /* Animation.framework */,
 				8FCE6A7C1C7B1AF50079A587 /* Interpolation.framework */,
 				8F2426F91C77797600519AD5 /* Cartfile */,
