@@ -21,14 +21,14 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         
-        shadows = [Shadow(color: UIColor.blackColor(), offset: UIOffset(horizontal: 30, vertical: 30), opacity: 0.8, radius : 5),
-            Shadow(color: UIColor.blackColor(), offset: UIOffset(horizontal: -30, vertical: -30), opacity: 0.8, radius : 5)
+        shadows = [Shadow(color: UIColor.black, offset: UIOffset(horizontal: 30, vertical: 30), opacity: 0.8, radius : 5),
+            Shadow(color: UIColor.black, offset: UIOffset(horizontal: -30, vertical: -30), opacity: 0.8, radius : 5)
         ]
     }
     
     @IBAction func cycleShadows()
     {
-        shadowButton.enabled = false
+        shadowButton.isEnabled = false
         
         let shadow = shadows.removeFirst()
         
@@ -36,7 +36,7 @@ class ViewController: UIViewController
  
         shadowButton.setShadow(shadow, duration: 10)
         
-        shadowView.setShadow(shadow, duration: 10) { _ in self.shadowButton.enabled = true }
+        shadowView.setShadow(shadow, duration: 10) { _ in self.shadowButton.isEnabled = true }
     }
 }
 

@@ -21,8 +21,8 @@ public struct Shadow
     var radius : CGFloat
     
     public init(
-        color : UIColor = UIColor.clearColor(),
-        offset : UIOffset = UIOffsetZero,
+        color : UIColor = UIColor.clear,
+        offset : UIOffset = UIOffset.zero,
         opacity : CGFloat = 0,
         radius : CGFloat = 0
         )
@@ -36,9 +36,9 @@ public struct Shadow
     
     public static let None = Shadow()
     
-    public static let Light = Shadow(color: UIColor.blackColor(), offset: UIOffsetZero, opacity: 0.3, radius: 1)
+    public static let Light = Shadow(color: UIColor.black, offset: UIOffset.zero, opacity: 0.3, radius: 1)
     
-    public static let Dark = Shadow(color: UIColor.blackColor(), offset: UIOffset(horizontal: 2, vertical: 2), opacity: 0.8, radius: 3)
+    public static let Dark = Shadow(color: UIColor.black, offset: UIOffset(horizontal: 2, vertical: 2), opacity: 0.8, radius: 3)
 }
 
 //MARK: - Equatable
@@ -76,12 +76,12 @@ public extension UIView
     @IBInspectable
     var shadowColor : UIColor?
         {
-        set { layer.shadowColor = newValue?.CGColor }
+        set { layer.shadowColor = newValue?.cgColor }
         get
         {
             if let shadowCgColor = layer.shadowColor
             {
-                return UIColor(CGColor: shadowCgColor)
+                return UIColor(cgColor: shadowCgColor)
             }
             return nil
         }
@@ -121,21 +121,21 @@ public extension UIView
         get
         {
             return Shadow(
-                color: shadowColor ?? UIColor.clearColor(),
+                color: shadowColor ?? UIColor.clear,
                 offset: UIOffset(horizontal: shadowOffset.width, vertical: shadowOffset.height),
                 opacity: shadowOpacity,
                 radius: shadowRadius)
         }
     }
     
-    func setShadow(shadow: Shadow,
+    func setShadow(_ shadow: Shadow,
         duration: Double,
-        timing: TimingFunction = TimingFunction(easeIn: EasingCurve.Quadratic, easeOut: EasingCurve.Quadratic),
-        completion: (Bool -> ())? = nil)
+        timing: TimingFunction = TimingFunction(easeIn: EasingCurve.quadratic, easeOut: EasingCurve.quadratic),
+        completion: @escaping (Bool) -> () = { _ in return })
     {
         let shadowBefore = self.shadow
         
-        Animator.animate(duration,
+        Animator.animate(duration: duration,
             delay: 0,
             timingFunction: timing,
             closure: { self.shadow = (shadowBefore, shadow) ◊ CGFloat($0) },
